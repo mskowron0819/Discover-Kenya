@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from './slider.jsx';
-import Navigation from './nav.jsx';
 import img1 from '../img/Malindi-Beach-Kenya2-min.jpg';
 import img2 from '../img/hugh-sitton-42-25853252-2048x1324-min.jpg';
 import img3 from '../img/18-min.jpg';
@@ -30,7 +29,6 @@ var imgData = [
 class MainSection extends React.Component{
     render(){
         return <div className="main">
-
             <Slider imgData={imgData}/>
 {/*            <h1>Discover wildness of Kenya</h1>*/}
         </div>
