@@ -1,6 +1,11 @@
 module.exports = {
     entry: ['whatwg-fetch', './js/app.jsx'],
     output: { filename: "./js/out.js" },
+    devServer: {
+        inline: true,
+        contentBase: './',
+        port: 3001
+    },
     watch: true,
     module: {
         loaders: [

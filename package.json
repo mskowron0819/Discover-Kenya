@@ -18,6 +18,7 @@
   "dependencies": {
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "react-router": "^3.0.3",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -33,7 +34,8 @@
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.4"
   },
   "repository": {
     "type": "git",
