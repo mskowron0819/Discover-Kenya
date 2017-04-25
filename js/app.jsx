@@ -10,7 +10,6 @@ import Safari from './safari.jsx';
 import NotFound from './notFound.jsx';
 require("./style.scss");
 
-console.log(Navigation);
 document.addEventListener('DOMContentLoaded',()=>{
     class App extends React.Component{
         render(){
