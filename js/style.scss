@@ -95,6 +95,14 @@ nav {
         padding-top: 56.25%;
         justify-content: center;
         display: flex;
+        animation: pulse 6s infinite;
+        @keyframes pulse {
+          0% {
+          height: 1%;
+          }
+          100% {
+            height: 100%;          }
+        }
         .slider-text{
           align-self: flex-end;
           margin-bottom: 4.5vh;
@@ -138,6 +146,9 @@ nav {
       width: 10%;
       height: 100%;
       display: flex;
+      svg{
+        display: none;
+      }
     }
     .controls {
       display: flex;
@@ -154,12 +165,17 @@ nav {
 
 @media only screen and (min-width : 992px) {
   .toggle {
-    background: url('../img/1493061780_ChevronLeftCircle.png') no-repeat center;
-    background-size: contain;
+    //background: url('../node_modules/react-icons/lib/fa/angle-double-left.js') no-repeat center;
+    //background-size: contain;
     align-self: center;
     width: 100%;
     height: 7vh;
+    svg{
+      display: block;
+      margin: 0 auto;
+    }
   }
+
   //.toggle--next {
   //  background: url('../img/1493061740_ChevronRightCircle.png') no-repeat center;
   //  background-size: contain;
