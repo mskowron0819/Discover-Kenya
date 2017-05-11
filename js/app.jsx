@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import { Router, Route, IndexRoute, hashHistory} from 'react-router';
 import Navigation from './nav.jsx';
 import MainSection from './main.jsx';

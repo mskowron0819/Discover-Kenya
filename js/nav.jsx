@@ -17,7 +17,6 @@ class Navigation extends React.Component{
         </nav>
             {this.props.children}
         </div>
-
     }
 }
 export default Navigation;

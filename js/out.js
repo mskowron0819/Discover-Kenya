@@ -13121,6 +13121,7 @@ var Slide = function (_React$Component2) {
     _createClass(Slide, [{
         key: 'render',
         value: function render() {
+            console.log(this.props.imagePath);
             var classes = (0, _classnames2.default)({
                 'slide': true,
                 'slide--active': this.props.active
@@ -13128,8 +13129,11 @@ var Slide = function (_React$Component2) {
             return _react2.default.createElement(
                 'div',
                 { className: classes },
-                _react2.default.createElement('img', { src: this.props.imagePath, alt: this.props.imageAlt }),
-                _react2.default.createElement('a', { href: this.props.actionHref })
+                _react2.default.createElement(
+                    'div',
+                    { style: 'background: url("' + this.props.imagePath + '")' },
+                    'hello'
+                )
             );
         }
     }]);
@@ -13170,16 +13174,8 @@ var Controls = function (_React$Component3) {
             return _react2.default.createElement(
                 'div',
                 { className: 'controls' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'toggle toggle--prev', onClick: this.handleTogglePrev },
-                    'Prev'
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'toggle toggle--next', onClick: this.handleToggleNext },
-                    'Next'
-                )
+                _react2.default.createElement('div', { className: 'toggle toggle--prev', onClick: this.handleTogglePrev }),
+                _react2.default.createElement('div', { className: 'toggle toggle--next', onClick: this.handleToggleNext })
             );
         }
     }]);
@@ -13221,13 +13217,9 @@ var Pagination = function (_React$Component4) {
                     'pager': true,
                     'page--active': isActive
                 });
-                return _react2.default.createElement(
-                    'span',
-                    { className: classes, id: page.id, key: page.id, title: page.title, onClick: function onClick(e) {
-                            return _this6.handleToggleSlide(e, page.id);
-                        } },
-                    ' hello'
-                );
+                return _react2.default.createElement('span', { className: classes, id: page.id, key: page.id, title: page.title, onClick: function onClick(e) {
+                        return _this6.handleToggleSlide(e, page.id);
+                    } });
             });
             return _react2.default.createElement(
                 'div',
@@ -15337,7 +15329,7 @@ exports = module.exports = __webpack_require__(125)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rancho);", ""]);
 
 // module
-exports.push([module.i, "html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\na {\n  text-decoration: none;\n  color: #000; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\nbody {\n  line-height: 1;\n  box-sizing: border-box;\n  font-family: 'Rancho', cursive; }\n\nnav {\n  height: 14vh;\n  width: 100%;\n  background-color: rgba(235, 238, 235, 0.48);\n  position: fixed;\n  top: 0;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap; }\n  nav .logo {\n    width: 20%; }\n    nav .logo img {\n      height: 12vh;\n      margin-left: 10%;\n      padding-top: 1vh; }\n  nav .nav-bar {\n    width: 70%;\n    padding-right: 1rem; }\n    nav .nav-bar ul {\n      display: flex;\n      justify-content: space-around; }\n    nav .nav-bar li {\n      display: inline-block; }\n      nav .nav-bar li a {\n        font-size: 1rem;\n        line-height: 12vh; }\n\n.main {\n  margin-top: 14vh;\n  height: 30vh;\n  width: 100%; }\n  .main .slider {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%; }\n    .main .slider h1 {\n      color: #FFF;\n      font-size: 4rem; }\n    .main .slider .slides .slide {\n      display: none; }\n      .main .slider .slides .slide img {\n        width: 100vw; }\n    .main .slider .slides .slide--active {\n      display: block; }\n    .main .slider .controls {\n      position: absolute;\n      top: 14vh;\n      width: 100%;\n      height: 46vh;\n      display: flex;\n      justify-content: space-between; }\n      .main .slider .controls .toggle {\n        align-self: center;\n        height: 8vh;\n        width: 10%; }\n      .main .slider .controls .toggle--prev {\n        background: url(" + __webpack_require__(141) + ") no-repeat center;\n        background-size: contain; }\n      .main .slider .controls .toggle--next {\n        background: url(" + __webpack_require__(140) + ") no-repeat center;\n        background-size: contain; }\n    .main .slider .pagination {\n      position: absolute;\n      top: 14vh;\n      width: 100%;\n      height: 46vh;\n      display: flex;\n      justify-content: center; }\n      .main .slider .pagination .pager {\n        background-color: #727272;\n        border-radius: 50%;\n        display: inline-block;\n        height: 1rem;\n        margin: 10px;\n        overflow: hidden;\n        white-space: nowrap;\n        width: 1rem;\n        align-self: flex-end; }\n      .main .slider .pagination .page--active {\n        background-color: rgba(61, 61, 61, 0.5); }\n\n/*\n// Main part of the site with slider\n.main{\n  height: 100vh;\n  width: 100%;\n  display: flex;\n  flex-wrap: wrap;\n  nav {\n    height: 15vh;\n    width: 100%;\n    background-color: rgba(199, 202, 199, 0.48);\n    position: fixed;\n    img {\n      height: 13vh;\n      margin-left: 4rem;\n      padding-top: 1vh;\n    }\n  }\n  .slider {\n    height: 100vh;\n    h1 {\n      color: #FFF;\n      font-size: 4rem;\n    }\n  }\n}\n//\n.slides {\n  display: block;\n  width: 100%;\n  overflow: hidden;\n  white-space: nowrap;\n}\n.slide {\n  display: none;\n  img{\n    width: 100%;\n  }\n}\n.slide.slide--active {\n  display: block;\n}\n.toggle {\n  background: blue;\n  color: white;\n  display: block;\n  padding: 20px;\n  position: absolute;\n  top: 50%;\n}\n.toggle-prev {\n  left: 0;\n}\n.toggle--next {\n  right: 0;\n}\n.pagination {\n  margin: 20px;\n  text-align: center;\n}\n.pager {\n  background-color: #727272;\n  border-radius: 50%;\n  display: inline-block;\n  height: 20px;\n  margin: 10px;\n  overflow: hidden;\n  text-indent: -9000px;\n  white-space: nowrap;\n  width: 20px;\n}\n.page--active{\n  background-color: rgba(61,61,61,0.5);\n}\n\n*/\n", ""]);
+exports.push([module.i, "html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  font-size: 100%;\n  font: inherit;\n  vertical-align: baseline; }\n\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  display: block; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\na {\n  text-decoration: none;\n  color: #000; }\n\nblockquote:before, blockquote:after {\n  content: '';\n  content: none; }\n\nq:before, q:after {\n  content: '';\n  content: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\nbody {\n  line-height: 1;\n  box-sizing: border-box;\n  font-family: 'Rancho', cursive; }\n\nnav {\n  height: 15vh;\n  width: 100%;\n  background-color: rgba(235, 238, 235, 0.48);\n  position: fixed;\n  top: 0;\n  display: flex;\n  justify-content: space-between;\n  flex-wrap: wrap; }\n  nav .logo {\n    width: 20%; }\n    nav .logo img {\n      height: 13vh;\n      margin-left: 10%;\n      padding-top: 1vh; }\n  nav .nav-bar {\n    width: 70%;\n    padding-right: 1rem; }\n    nav .nav-bar ul {\n      display: flex;\n      justify-content: space-around; }\n    nav .nav-bar li {\n      display: inline-block; }\n      nav .nav-bar li a {\n        font-size: 1rem;\n        line-height: 15vh; }\n\n.main {\n  margin-top: 15vh;\n  height: 35vh;\n  width: 100%; }\n  .main .slider {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%; }\n    .main .slider .slide {\n      display: none; }\n      .main .slider .slide img {\n        width: 100%; }\n    .main .slider .slide--active {\n      display: block; }\n    .main .slider .toggle {\n      height: 8vh;\n      width: 10%; }\n    .main .slider .toggle--prev {\n      background: url(" + __webpack_require__(141) + ") no-repeat center;\n      background-size: contain;\n      position: absolute;\n      left: 0.5rem;\n      top: 27vh; }\n    .main .slider .toggle--next {\n      background: url(" + __webpack_require__(140) + ") no-repeat center;\n      background-size: contain;\n      position: absolute;\n      right: 0.5rem;\n      top: 27vh; }\n    .main .slider .pagination {\n      text-align: center;\n      position: absolute;\n      top: 30vh; }\n      .main .slider .pagination .pager {\n        background-color: #727272;\n        border-radius: 50%;\n        display: inline-block;\n        margin: 10px;\n        align-self: flex-end;\n        height: 20px;\n        overflow: hidden;\n        text-indent: -9000px;\n        white-space: nowrap;\n        width: 20px; }\n      .main .slider .pagination .page--active {\n        background-color: rgba(61, 61, 61, 0.5); }\n\n.image {\n  width: 100%;\n  height: 400px;\n  background-size: cover; }\n", ""]);
 
 // exports
 
@@ -30662,8 +30654,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!../node_modules/resolve-url-loader/index.js!./style.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!../node_modules/resolve-url-loader/index.js!./style.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});

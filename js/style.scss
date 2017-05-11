@@ -8,6 +8,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  //border: 1px solid red;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -46,25 +47,22 @@ body {
 
 // Navigation
 nav {
-  height: 15vh;
-  width: 100%;
-  background-color: rgba(235, 238, 235, 0.48);
+  height: 8vh;
+  width: 100vw;
+  background-color: rgba(119, 119, 119, 0.5);
   position: fixed;
   top: 0;
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: space-around;
   .logo{
-    width: 20%;
+    width: 20vw;
     img {
-      height: 13vh;
-      margin-left: 10%;
-      padding-top: 1vh;
+      height: 8vh;
     }
   }
   .nav-bar{
-    width: 70%;
-    padding-right: 1rem;
+    width: 70vw;
     ul{
       display: flex;
       justify-content: space-around;
@@ -72,8 +70,10 @@ nav {
     li{
       display: inline-block;
       a{
-        font-size: 1rem;
-        line-height: 15vh;
+        color: #fff;
+        font-size: 4vw;
+        line-height: 8vh;
+        letter-spacing: 1px;
       }
     }
   }
@@ -82,65 +82,97 @@ nav {
 
 // Main part of the site with slider
 .main{
-  margin-top: 15vh;
-  height: 35vh;
-  width: 100%;
+  margin-top: 8vh;
+  width: 100vw;
   .slider {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    position: relative;
     .slide {
       display: none;
-      img {
-        width: 100%;
+      .sliderImg {
+        background: no-repeat center;
+        background-size: cover;
+        width: 100vw;
+        padding-top: 56.25%;
+        justify-content: center;
+        display: flex;
+        .slider-text{
+          align-self: flex-end;
+          margin-bottom: 4.5vh;
+          font-size: 1.3rem;
+          z-index: 1;
+          letter-spacing: 1px;
+          a{
+            color: #fff;
+          }
+        }
       }
     }
     .slide--active {
       display: block;
     }
-        .toggle {
-          height: 8vh;
-          width: 10%;
-        }
-        .toggle--prev {
-          background: url('../img/1493061780_ChevronLeftCircle.png') no-repeat center;
-          background-size: contain;
-          position: absolute;
-          left: 0.5rem;
-          top: 27vh;
-        }
-        .toggle--next {
-          background: url('../img/1493061740_ChevronRightCircle.png') no-repeat center;
-          background-size: contain;
-          position: absolute;
-          right: 0.5rem;
-          top: 27vh;
-        }
-
       .pagination {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         position: absolute;
-        top: 30vh;
+        bottom: 0;
+        width: 100%;
+        height: 8vh;
+        background-color: rgba(61, 61, 61, 0.49);
         .pager {
-          background-color: #727272;
+          background-color: rgba(52, 52, 52, 0.71);
+          border: 2px solid #292929;
           border-radius: 50%;
-          display: inline-block;
-          margin: 10px;
+          margin: 7px;
+          height: 8px;
+          width: 8px;
           align-self: flex-end;
-          height: 20px;
-          overflow: hidden;
-          text-indent: -9000px;
-          white-space: nowrap;
-          width: 20px;
+          display: inline-block;
+          z-index: 4;
         }
         .page--active {
-          background-color: rgba(61, 61, 61, 0.5);
+          background-color: rgba(182, 175, 188, 0.5);
+          border: 2px solid #ffffff;
         }
       }
+    .toggle--prev, .toggle--next {
+      width: 10%;
+      height: 100%;
+      display: flex;
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      z-index: 3;
+      position: absolute;
+      bottom: 0;
+      //transform: translateY(50%);
+      height: 100%;
+    }
   }
 }
-.image{
-  width: 100%;
-  height: 400px;
-  background-size: cover;
+
+@media only screen and (min-width : 992px) {
+  .toggle {
+    background: url('../img/1493061780_ChevronLeftCircle.png') no-repeat center;
+    background-size: contain;
+    align-self: center;
+    width: 100%;
+    height: 7vh;
+  }
+  //.toggle--next {
+  //  background: url('../img/1493061740_ChevronRightCircle.png') no-repeat center;
+  //  background-size: contain;
+  //  align-self: center;
+  //  width: 100%;
+  //  height: 7vh;
+  //}
+}
+h1{
+  margin: 15vh;
+  font-size: 2rem;
+}
+.main h1{
+  margin: 0;
+  text-align: center;
 }
