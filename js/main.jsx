@@ -1,39 +1,47 @@
 import React from 'react';
 import Slider from './slider.jsx';
-import {Link} from 'react-router';
 var imgData = [
     {
         id         : "slide1",
         imagePath  : '../img/beaches.jpg',
         imageAlt   : "Slide 1 Image",
         actionHref : 'href',
-        // action     : 'img1',
-        link       : <Link to='/beaches'>img1 hello one</Link>,
+        link       : 'img1 hello one',
     },
     {
         id         : "slide2",
         imagePath  : '../img/masaje.jpg',
         imageAlt   : "Slide 2 Image",
         actionHref : 'href',
-        // action     : 'img2',
-        link       : <Link to='/culture'>img2 hello two</Link>,
+        link       : 'img2 hello two',
     },
     {
         id         : "slide3",
         imagePath  : '../img/gepard.jpg',
         imageAlt   : "Slide 3 Image",
         actionHref : 'href',
-        // action     : 'img3',
-        link       : <Link to='/wildLife'>img3 hello three</Link>,
+        link       : 'img3 hello three',
     },
 ];
+class Article extends React.Component{
+    render(){
+        return <div className="article">{this.props.children}</div>
+    }
+}
 class MainSection extends React.Component{
     render(){
         return <div className="main">
-            <Slider imgData={imgData}>{this.props.children}
-            </Slider>
+            <Slider imgData={imgData}/>
             <div>
-                <h1>Discover wildness of Kenya</h1>
+                <Article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, atque!</p>
+                </Article>
+                <Article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, atque!</p>
+                </Article>
+                <Article>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, atque!</p>
+                </Article>
             </div>
         </div>
     }

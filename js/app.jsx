@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded',()=>{
         render(){
             return <Router history={hashHistory}>
                     <Route path='/' component={Navigation}>
-                <IndexRoute component={MainSection} />
-                        <Route path='/wildLife' component={WildLife} />
-                        <Route path='/culture' component={Culture} />
-                        <Route path='/beaches' component={Beaches} />
-                        <Route path='/safari' component={Safari} />
+                <IndexRoute component={MainSection}/>
+                        <Route path='wildLife' component={WildLife} />
+                        <Route path='culture' component={Culture} />
+                        <Route path='beaches' component={Beaches} />
+                        <Route path='safari' component={Safari} />
                         <Route path='*' component={NotFound} />
                     </Route>
                 </Router>
